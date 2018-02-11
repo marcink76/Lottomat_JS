@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lotto - Marcin Konieczny</title>
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <!-- build:css styles/vendor.css -->
+  <!-- bower:css -->
+  <!-- endbower -->
+  <!-- endbuild -->
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild -->
+
+</head>
+<body>
+
+<h1>Lotto</h1>
+<button id="clearValue">Wyzeruj wszystko</button>
+<div class="box-inputs">
+  <label for="input1">1. </label><input placeholder="1-49" type="text" id="input1" class="input-default">
+  <label for="input2">2. </label><input type="text" id="input2" class="input-default">
+  <label for="input3">3. </label><input type="text" id="input3" class="input-default">
+  <label for="input4">4. </label><input type="text" id="input4" class="input-default">
+  <label for="input5">5. </label><input type="text" id="input5" class="input-default">
+  <label for="input6">6. </label><input type="text" id="input6" class="input-default">
+
+  <button class="btn-shuffle" id="btnShuffle">Losuj</button>
+</div>
+
+<div class="box-results">
+  <h2>Shuffled Digits</h2>
+  <span></span>
+  <h2>Results:</h2>
+  <span id="results"></span>
+</div>
+
+
+<!-- build:js scripts/vendor.js -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/modernizr/modernizr.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js scripts/main.js -->
+<script src="scripts/main.js"></script>
+<!-- endbuild -->
+</body>
+</html>
