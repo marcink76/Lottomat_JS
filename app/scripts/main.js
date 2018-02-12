@@ -1,6 +1,6 @@
 const userDigits = document.querySelectorAll('.input-default');
 const shuffleBtn = document.getElementById('btnShuffle');
-const resultBox = document.getElementById('results');
+//const resultBox = document.getElementById('results');
 const clearBtn = document.getElementById('clearValue');
 const messageDiv = document.getElementById('error-message');
 const shuffleCountH2 = document.getElementById('shuffle-count');
@@ -16,24 +16,7 @@ const prize43 = 24;
 const prize44 = 750;
 const prize45 = 55000;
 const prize46 = 20000000;
-const shuffleCost = 10;
-
-randomizeBtn.addEventListener('click', function () {
-  clearBingo();
-  const temp = shuffle();
-  for (let i = 0; i < userDigits.length; i++) {
-  userDigits[i].value = temp[i];
-  console.log(userDigits[i]);
-  }
-})
-
-
-clearBtn.addEventListener('click', function () {
-  for (let i = 0; i < userDigits.length; i++) {
-    userDigits[i].value = '';
-    clearBingo(i);
-  }
-});
+const shuffleCost = 3;
 
 
 //TODO
@@ -45,9 +28,28 @@ clearBtn.addEventListener('click', function () {
 // 3. Zliczać hajs
 // 4. Zadanie z *, zapisywać do localstorage (localstorage.setItem()) historie trafień
 
-shuffleBtn.addEventListener('click', function () {
+randomizeBtn.addEventListener('click', function () {
+  clearBingo();
+  const temp = shuffle();
+  for (let i = 0; i < userDigits.length; i++) {
+    userDigits[i].value = temp[i];
+    console.log(userDigits[i]);
+  }
+})
 
-  // checkIsEmpty();
+
+clearBtn.addEventListener('click', function () {
+  for (let i = 0; i < userDigits.length; i++) {
+    userDigits[i].value = '';
+    clearBingo(i);
+  }
+});
+
+shuffleBtn.addEventListener('click', function () {
+  start();
+});
+
+function start() {
   clearBingo();
   if (checkIsEmpty()) {
     if (checkIsNumber()) {
@@ -64,7 +66,7 @@ shuffleBtn.addEventListener('click', function () {
       }
     }
   }
-});
+}
 
 //sprawdzamy czy pola są puste
 function checkIsEmpty() {
@@ -151,7 +153,7 @@ function showResults(hits) {
     Nic nie wygrałeś, bo nas nie stać.
     `;
 
-  resultBox.innerText = message;
+  //resultBox.innerText = message;
 }
 
 function showValidation(element, message) {
@@ -208,6 +210,6 @@ function showStatistics() {
   for (let i = 0; i < hajsBucket.length; i++) {
     sum = sum + hajsBucket[i];
   }
-  totalCost.innerText = shuffleCost * shuffleCount - 10; // mało eleganckie rozwiązanie
+  totalCost.innerText = shuffleCost * shuffleCount - 3; // mało eleganckie rozwiązanie
   totalPrize.innerText = sum;
 }
