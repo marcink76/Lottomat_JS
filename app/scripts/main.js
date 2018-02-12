@@ -3,19 +3,19 @@ const shuffleBtn = document.getElementById('btnShuffle');
 const resultBox = document.getElementById('results');
 const clearBtn = document.getElementById('clearValue');
 const messageDiv = document.getElementById('error-message');
-let shuffleCountH2 = document.getElementById('shuffle-count');
-let shuffleCount = 0;
-let hajsBucket = [];
-//-------------------
-const prize43 = 24;
-const prize44 = 7500;
-const prize45 = 55000;
-const prize46 = 2000000;
-let shuffleCost = 10;
+const shuffleCountH2 = document.getElementById('shuffle-count');
 const prizeCount = document.getElementById('prize-count');
 const totalCost = document.getElementById('total-cost');
 const totalPrize = document.getElementById('total-prize');
 
+let shuffleCount = 1;
+let hajsBucket = [];
+//-------------------
+const prize43 = 24;
+const prize44 = 750;
+const prize45 = 55000;
+const prize46 = 20000000;
+const shuffleCost = 10;
 
 clearBtn.addEventListener('click', function () {
   for (let i = 0; i < userDigits.length; i++) {
@@ -137,7 +137,8 @@ function showResults(hits) {
   let message = `Liczba trafień: ${hits.length}.
     Liczby trafione to ${hits}.
     Gratulacje!!!
-    Nic nie wygrałeś, bo nas nie stać.`;
+    Nic nie wygrałeś, bo nas nie stać.
+    `;
 
   resultBox.innerText = message;
 }
@@ -173,19 +174,19 @@ function showMessage(message) {
 
 function moneyCount(hits) {
   if (hits.length === 3) {
-    messageDiv.innerText = 'wygrałeś 24pln, na flaszkę i dwa harnasie';
+    showMessage('wygrałeś 24pln, na flaszkę i dwa harnasie');
     hajsBucket.push(prize43);
   }
   if (hits.length === 4) {
-    messageDiv.innerText = 'wygrałeś dużo więcej gościu';
+    showMessage('wygrałeś dużo więcej gościu');
     hajsBucket.push(prize44);
   }
   if (hits.length === 5) {
-    messageDiv.innerText = 'jesteś całkiem przystojny';
+    showMessage('jesteś całkiem przystojny');
     hajsBucket.push(prize45);
   }
   if (hits.length === 6) {
-    messageDiv.innerText = 'Kocham Cię';
+    showMessage('Kocham Cię');
     hajsBucket.push(prize46);
   }
 }
@@ -196,6 +197,6 @@ function showStatistics() {
   for (let i = 0; i < hajsBucket.length; i++) {
     sum = sum + hajsBucket[i];
   }
-  totalCost.innerText = shuffleCost * shuffleCount;
+  totalCost.innerText = shuffleCost * shuffleCount - 10; // mało eleganckie rozwiązanie
   totalPrize.innerText = sum;
 }
