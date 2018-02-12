@@ -24,19 +24,31 @@ body {
 .btn-shuffle{
   border: 1px solid green;
   border-radius: 4px;
+  width: 150px;
   padding: 10px;
-  font-size: 30px;
-  transition: all 200ms;
   cursor: pointer;
   display: block;
   margin: 20px;
 }
+body{margin-left: 15px;}
 
 .btn-shuffle:hover{
-  padding: 20px;
-  font-size: 34px;
+  background-color: #0b97c4;
+
 }
 
 .error{
   border-color: red;
+}
+
+.bingo{
+  background-color: green;
+}
+#statistics{
+  padding: 10px;
+  width: 300px;
+  height: 260px;
+  color: white;
+  background-color: #0b97c4;
+  border-radius: 20px;
 }
