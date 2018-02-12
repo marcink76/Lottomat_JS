@@ -22,9 +22,10 @@
 <body>
 
 <h1>Lotto</h1>
-<button id="clearValue">Wyzeruj wszystko</button>
+
+<button id="clearValue" class="btn-shuffle">Wyzeruj wszystko</button>
 <div class="box-inputs">
-  <label for="input1">1. </label><input placeholder="1-49" type="text" id="input1" class="input-default">
+  <label for="input1">1. </label><input type="text" id="input1" class="input-default">
   <label for="input2">2. </label><input type="text" id="input2" class="input-default">
   <label for="input3">3. </label><input type="text" id="input3" class="input-default">
   <label for="input4">4. </label><input type="text" id="input4" class="input-default">
@@ -32,24 +33,24 @@
   <label for="input6">6. </label><input type="text" id="input6" class="input-default">
 
   <button class="btn-shuffle" id="btnShuffle">Losuj</button>
+
+  <div id="error-message"> </div>
 </div>
 
-<div class="box-results">
-  <h2>Shuffled Digits</h2>
-  <div id="shuffled-digits">
-    <p class="output" id="output1"></p>
-    <p class="output" id="output2"></p>
-    <p class="output" id="output3"></p>
-    <p class="output" id="output4"></p>
-    <p class="output" id="output5"></p>
-    <p class="output" id="output6"></p>
-  </div>
-
-  <span></span>
   <h2>Results:</h2>
   <span id="results"></span>
 </div>
+<div id="statistics">
+  <span>Ilość losowań:</span>
+  <p id="shuffle-count"></p>
+  <span>Ilośc wygranych:</span>
+  <p id="prize-count"></p>
+  <span>Całkowity koszt:</span>
+  <p id="total-cost"></p>
+  <span>Suma wygranych:</span>
+  <p id="total-prize"></p>
 
+</div>
 
 <!-- build:js scripts/vendor.js -->
 <!-- bower:js -->
