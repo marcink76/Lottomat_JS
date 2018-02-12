@@ -7,6 +7,7 @@ const shuffleCountH2 = document.getElementById('shuffle-count');
 const prizeCount = document.getElementById('prize-count');
 const totalCost = document.getElementById('total-cost');
 const totalPrize = document.getElementById('total-prize');
+const randomizeBtn = document.getElementById('randomize-btn');
 
 let shuffleCount = 1;
 let hajsBucket = [];
@@ -16,6 +17,15 @@ const prize44 = 750;
 const prize45 = 55000;
 const prize46 = 20000000;
 const shuffleCost = 10;
+
+randomizeBtn.addEventListener('click', function () {
+  const temp = shuffle();
+  for (let i = 0; i < userDigits.length; i++) {
+  userDigits[i].value = temp[i];
+  console.log(userDigits[i]);
+  }
+})
+
 
 clearBtn.addEventListener('click', function () {
   for (let i = 0; i < userDigits.length; i++) {
