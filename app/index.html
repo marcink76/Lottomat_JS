@@ -24,6 +24,7 @@
 <h1>Lotto</h1>
 
 <button id="clearValue" class="btn-shuffle">Wyzeruj liczby</button>
+<button id="randomize-btn" class="btn-shuffle">Chybił trafił</button>
 <div class="box-inputs">
   <label for="input1">1. </label><input type="text" id="input1" class="input-default">
   <label for="input2">2. </label><input type="text" id="input2" class="input-default">
@@ -34,13 +35,14 @@
 
   <button class="btn-shuffle" id="btnShuffle">Losuj</button>
 
-  <div id="error-message"> </div>
+  <div id="error-message" class="error-message"> </div>
 </div>
 
   <h2>Results:</h2>
   <span id="results"></span>
 </div>
 <div id="statistics">
+  <h2>Statystyki:</h2>
   <span>Ilość losowań:</span>
   <p id="shuffle-count"></p>
   <span>Ilośc wygranych:</span>

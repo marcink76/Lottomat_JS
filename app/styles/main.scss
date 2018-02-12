@@ -22,7 +22,8 @@ body {
 }
 
 .btn-shuffle{
-  border: 1px solid green;
+  outline: none;
+  border: none;
   border-radius: 4px;
   width: 150px;
   padding: 10px;
@@ -38,17 +39,30 @@ body{margin-left: 15px;}
 }
 
 .error{
-  border-color: red;
+  border: 3px red solid;
 }
 
 .bingo{
   background-color: green;
+  color: white;
 }
 #statistics{
   padding: 10px;
   width: 300px;
-  height: 260px;
+  height: 280px;
   color: white;
   background-color: #0b97c4;
   border-radius: 20px;
+  vertical-align: center;
+}
+.error-message{
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  background-color: red;
+  text-align: center;
+  border: 2px red solid;
+  height: 30px;
+  width: 350px;
+
 }

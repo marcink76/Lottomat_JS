@@ -7,6 +7,7 @@ const shuffleCountH2 = document.getElementById('shuffle-count');
 const prizeCount = document.getElementById('prize-count');
 const totalCost = document.getElementById('total-cost');
 const totalPrize = document.getElementById('total-prize');
+const randomizeBtn = document.getElementById('randomize-btn');
 
 let shuffleCount = 1;
 let hajsBucket = [];
@@ -16,6 +17,16 @@ const prize44 = 750;
 const prize45 = 55000;
 const prize46 = 20000000;
 const shuffleCost = 10;
+
+randomizeBtn.addEventListener('click', function () {
+  clearBingo();
+  const temp = shuffle();
+  for (let i = 0; i < userDigits.length; i++) {
+  userDigits[i].value = temp[i];
+  console.log(userDigits[i]);
+  }
+})
+
 
 clearBtn.addEventListener('click', function () {
   for (let i = 0; i < userDigits.length; i++) {
@@ -174,19 +185,19 @@ function showMessage(message) {
 
 function moneyCount(hits) {
   if (hits.length === 3) {
-    showMessage('wygrałeś 24pln, na flaszkę i dwa harnasie');
+    showMessage('Wygrałeś 24pln, na flaszkę i dwa Harnasie!');
     hajsBucket.push(prize43);
   }
   if (hits.length === 4) {
-    showMessage('wygrałeś dużo więcej gościu');
+    showMessage('Koniaczek, koniaczek!');
     hajsBucket.push(prize44);
   }
   if (hits.length === 5) {
-    showMessage('jesteś całkiem przystojny');
+    showMessage('Jesteś całkiem przystojny!');
     hajsBucket.push(prize45);
   }
   if (hits.length === 6) {
-    showMessage('Kocham Cię');
+    showMessage('Kocham Cię!');
     hajsBucket.push(prize46);
   }
 }
